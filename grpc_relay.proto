@@ -1,0 +1,18 @@
+syntax = "proto3";
+import "grpc_base.proto";
+package grpc_relay;
+
+service GrpcRelay {
+  rpc HeartBeat (grpc_base.HeartBeatRequest) returns (grpc_base.HeartBeatReply) {}
+
+  rpc BidirectionalStreamingEcho(stream EchoRequest) returns (stream EchoResponse) {}
+}
+
+message EchoRequest {
+  string message = 1;
+}
+
+// EchoResponse is the response for echo.
+message EchoResponse {
+  string message = 1;
+}
