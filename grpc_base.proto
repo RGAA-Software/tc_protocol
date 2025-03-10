@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package grpc_base;
+
+message HeartBeatRequest {
+  int64 hb_index = 1;
+}
+
+message HeartBeatReply {
+  int64 hb_index = 1;
+}
