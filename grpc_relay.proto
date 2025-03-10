@@ -4,15 +4,15 @@ package grpc_relay;
 
 service GrpcRelay {
   rpc HeartBeat (grpc_base.HeartBeatRequest) returns (grpc_base.HeartBeatReply) {}
-
-  rpc BidirectionalStreamingEcho(stream EchoRequest) returns (stream EchoResponse) {}
+  rpc StreamRequest(stream RelayStreamRequest) returns (stream RelayStreamResponse) {}
 }
 
-message EchoRequest {
-  string message = 1;
+message RelayStreamRequest {
+  string server_id = 1;
+  string message = 2;
 }
 
-// EchoResponse is the response for echo.
-message EchoResponse {
-  string message = 1;
+message RelayStreamResponse {
+  string server_id = 1;
+  string message = 2;
 }

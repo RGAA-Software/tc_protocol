@@ -3,9 +3,11 @@ syntax = "proto3";
 package grpc_base;
 
 message HeartBeatRequest {
-  int64 hb_index = 1;
+  string server_id = 1;
+  int64 hb_index = 2;
 }
 
 message HeartBeatReply {
-  int64 hb_index = 1;
+  string server_id = 1;
+  int64 hb_index = 2;
 }
