@@ -1,7 +1,0 @@
-syntax = "proto3";
-
-package spvr_profile;
-
-//
-//  Spvr <---> Profile
-//
