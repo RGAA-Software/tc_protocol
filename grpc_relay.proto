@@ -4,15 +4,31 @@ package grpc_relay;
 
 service GrpcRelay {
   rpc HeartBeat (grpc_base.HeartBeatRequest) returns (grpc_base.HeartBeatReply) {}
-  rpc StreamRequest(stream RelayStreamRequest) returns (stream RelayStreamResponse) {}
+  rpc StreamRequest(stream RelayStreamRequest) returns (stream RelayStreamReply) {}
+  rpc QueryDevice(RelayQueryDeviceRequest) returns (RelayQueryDeviceReply) {}
 }
 
+// stream
 message RelayStreamRequest {
   string server_id = 1;
   string message = 2;
 }
 
-message RelayStreamResponse {
+message RelayStreamReply {
   string server_id = 1;
   string message = 2;
+}
+
+// query device
+message RelayQueryDeviceRequest {
+  string device_id = 1;
+}
+
+message RelayQueryDeviceReply {
+  bool has_device = 1;
+  string device_id = 2;
+  string in_w3c_ip = 3;
+  string in_local_ip = 4;
+  string grpc_port = 5;
+  string working_port = 6;
 }
