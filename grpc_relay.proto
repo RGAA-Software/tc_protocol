@@ -27,8 +27,10 @@ message RelayQueryDeviceRequest {
 message RelayQueryDeviceReply {
   bool has_device = 1;
   string device_id = 2;
-  string in_w3c_ip = 3;
-  string in_local_ip = 4;
-  string grpc_port = 5;
-  string working_port = 6;
+  string client_w3c_ip = 3;
+  repeated string client_local_ips = 4;
+  string server_w3c_ip = 5;
+  string server_local_ip = 6;
+  int32 server_grpc_port = 7;
+  int32 server_working_port = 8;
 }
