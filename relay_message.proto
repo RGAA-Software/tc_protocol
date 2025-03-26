@@ -41,8 +41,14 @@ message RelayHello {
 
 }
 
+message RelayDeviceNetInfo {
+  string ip = 1;
+  string mac = 2;
+}
+
 message RelayHeartBeat {
   int64 index = 1;
+  repeated RelayDeviceNetInfo net_info = 2;
 }
 
 message RelayTargetMessage {
