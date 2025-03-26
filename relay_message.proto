@@ -37,13 +37,13 @@ message RelayDeviceInfo {
   string device_id = 2;
 }
 
-message RelayHello {
-
-}
-
 message RelayDeviceNetInfo {
   string ip = 1;
   string mac = 2;
+}
+
+message RelayHello {
+  repeated RelayDeviceNetInfo net_info = 2;
 }
 
 message RelayHeartBeat {
