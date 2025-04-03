@@ -52,7 +52,7 @@ message RelayHeartBeat {
 }
 
 message RelayTargetMessage {
-  uint64 relay_msg_index = 5;
+  int64 relay_msg_index = 5;
   repeated string room_ids = 10;
   bytes payload = 30;
 }
