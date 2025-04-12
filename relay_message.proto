@@ -16,6 +16,8 @@ enum RelayMessageType {
   kRelayRoomDestroyed = 90;
   kRelayRequestStop = 100;
   kRelayRequestStopResp = 110;
+  kRelayRequestPausedStream = 120;
+  kRelayRequestResumeStream = 130;
 }
 
 enum RelayErrorCode {
@@ -112,6 +114,14 @@ message RelayRequestStopRespMessage {
 
 }
 
+message RelayRequestPauseMessage {
+
+}
+
+message RelayRequestResumeMessage {
+
+}
+
 message RelayMessage {
   string from_device_id = 20;
   RelayErrorMessage relay_error = 21;
@@ -128,4 +138,6 @@ message RelayMessage {
   RelayRoomDestroyedMessage room_destroyed = 130;
   RelayRequestStopMessage request_stop = 140;
   RelayRequestStopRespMessage request_stop_resp = 150;
+  RelayRequestPauseMessage request_pause = 160;
+  RelayRequestResumeMessage request_resume = 170;
 }
