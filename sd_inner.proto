@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package sd_inner;
+
+// Between deploy manager and servers
+// Deployer <---> Spvr
+// Deployer <---> Relay
+// Deployer <---> Profile
+//
+
+enum SdServerType {
+  kSdSpvrServer = 0;
+  kSdRelayServer = 1;
+  kSdProfileServer = 2;
+}
+
+enum SdInnerMessageType {
+  kSdInnerHello = 0;
+  kSdInnerHeartBeat = 1;
+}
+
+message SdInnerHello {
+  string server_name = 1;
+}
+
+message SdInnerHeartBeat {
+  string server_name = 1;
+  int64 hb_index = 2;
+}
+
+message SdInnerMessage {
+  SdServerType server_type = 1;
+  SdInnerMessageType msg_type = 2;
+  string server_id = 3;
+  SdInnerHello hello = 5;
+  SdInnerHeartBeat heartbeat = 10;
+}
