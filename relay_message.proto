@@ -37,6 +37,11 @@ message RelayErrorMessage {
 
 message RelayDeviceInfo {
   string device_id = 2;
+  string relay_server_ip = 3;
+  int32 relay_server_port = 4;
+  string device_w3c_ip = 5;
+  repeated string device_local_ips = 6;
+  int32 device_local_port = 7;
 }
 
 message RelayDeviceNetInfo {
