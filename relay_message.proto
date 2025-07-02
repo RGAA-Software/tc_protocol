@@ -96,8 +96,13 @@ message RelayRequestControlRespMessage {
 
 message RelayRoomPreparedMessage {
   string room_id = 10;
+  // same with creator_device_id
   string device_id = 20;
   string remote_device_id = 30;
+  // same with device_id
+  string creator_device_id = 40;
+  string creator_device_name = 50;
+  string creator_stream_id = 60;
 }
 
 message RelayRoomInfoChangedMessage {
