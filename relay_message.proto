@@ -67,6 +67,8 @@ message RelayTargetMessage {
 
 message RelayCreateRoomMessage {
   string device_id = 1;
+  string device_name = 2;
+  string stream_id = 3;
   string remote_device_id = 10;
 }
 
@@ -77,7 +79,9 @@ message RelayCreateRoomRespMessage {
 }
 
 message RelayRequestControlMessage {
-  string device_id = 10;
+  string device_id = 1;
+  string device_name = 2;
+  string stream_id = 3;
   string remote_device_id = 20;
   string room_id = 30;
 }
