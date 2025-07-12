@@ -19,6 +19,7 @@ enum RelayMessageType {
   kRelayRequestPausedStream = 120;
   kRelayRequestResumeStream = 130;
   kRelayRemoteDeviceOffline = 140;
+  kRelayNotification = 150;
 }
 
 enum RelayErrorCode {
@@ -147,6 +148,12 @@ message RelayRemoteDeviceOfflineMessage {
   string remote_device_id = 30;
 }
 
+message RelayNotificationMessage {
+  // json format
+  string event = 1;
+  string from_device = 2;
+}
+
 message RelayMessage {
   string from_device_id = 20;
   RelayErrorMessage relay_error = 21;
@@ -166,4 +173,5 @@ message RelayMessage {
   RelayRequestPauseMessage request_pause = 160;
   RelayRequestResumeMessage request_resume = 170;
   RelayRemoteDeviceOfflineMessage remote_device_offline = 180;
+  RelayNotificationMessage notification = 190;
 }
