@@ -150,7 +150,7 @@ message RelayRemoteDeviceOfflineMessage {
 
 message RelayNotificationMessage {
   // json format
-  string event = 1;
+  string body = 1;
   string from_device = 2;
 }
 
