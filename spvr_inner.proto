@@ -24,6 +24,7 @@ message SpvrInnerHello {
   string server_local_ip = 4;
   uint32 server_grpc_port = 5;
   uint32 server_working_port = 6;
+  string appkey = 7;
 }
 
 message SpvrInnerHeartBeat {
