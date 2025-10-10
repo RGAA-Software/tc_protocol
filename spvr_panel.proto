@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package spvr_panel;
+
+// Between Spvr - Panel
+
+enum SpvrPanelMessageType {
+  kSpvrPanelHello = 0;
+  kSpvrPanelHeartBeat = 1;
+}
+
+message SpvrPanelHello {
+  string device_id = 1;
+}
+
+message SpvrPanelHeartBeat {
+  int64 hb_index = 1;
+}
+
+message SpvrInnerMessage {
+  SpvrPanelMessageType msg_type = 1;
+  string device_id = 10;
+  SpvrPanelHello hello = 20;
+  SpvrPanelHeartBeat heartbeat = 30;
+}
