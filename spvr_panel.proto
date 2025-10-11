@@ -17,7 +17,7 @@ message SpvrPanelHeartBeat {
   int64 hb_index = 1;
 }
 
-message SpvrInnerMessage {
+message SpvrPanelMessage {
   SpvrPanelMessageType msg_type = 1;
   string device_id = 10;
   SpvrPanelHello hello = 20;

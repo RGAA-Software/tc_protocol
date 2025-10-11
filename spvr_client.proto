@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package spvr_client;
+
+// Between Spvr - Client
+
+enum SpvrClientMessageType {
+  kSpvrClientHello = 0;
+  kSpvrClientHeartBeat = 1;
+}
+
+message SpvrClientHello {
+  string device_id = 1;
+}
+
+message SpvrClientHeartBeat {
+  int64 hb_index = 1;
+}
+
+message SpvrClientMessage {
+  SpvrClientMessageType msg_type = 1;
+  string device_id = 10;
+  SpvrClientHello hello = 20;
+  SpvrClientHeartBeat heartbeat = 30;
+}
