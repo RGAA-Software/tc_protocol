@@ -15,6 +15,11 @@ message SpvrPanelHello {
 
 message SpvrPanelHeartBeat {
   int64 hb_index = 1;
+  string device_id = 2;
+  string desktop_link = 3;
+  string desktop_link_raw = 4;
+  // json format hardware system info
+  string sys_info_raw = 5;
 }
 
 message SpvrSysInfo {
