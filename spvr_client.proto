@@ -15,6 +15,10 @@ message SpvrClientHello {
 
 message SpvrClientHeartBeat {
   int64 hb_index = 1;
+  // !!thunder sdk!! heartbeat duration < 10'000 or not
+  // < 10'000 -> alive
+  // > 10'000 -> died
+  bool connection_alive = 2;
 }
 
 message SpvrClientMessage {
