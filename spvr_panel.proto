@@ -11,6 +11,7 @@ enum SpvrPanelMessageType {
 
 message SpvrPanelHello {
   string device_id = 1;
+  string user_id = 2;
 }
 
 message SpvrPanelHeartBeat {
@@ -20,6 +21,7 @@ message SpvrPanelHeartBeat {
   string desktop_link_raw = 4;
   // json format hardware system info
   string sys_info_raw = 5;
+  string user_id = 6;
 }
 
 message SpvrSysInfo {
