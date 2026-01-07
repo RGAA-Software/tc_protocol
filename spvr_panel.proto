@@ -12,6 +12,7 @@ enum SpvrPanelMessageType {
 message SpvrPanelHello {
   string device_id = 1;
   string user_id = 2;
+  string device_name = 3;
 }
 
 message SpvrPanelHeartBeat {
