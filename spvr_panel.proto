@@ -22,6 +22,8 @@ message SpvrPanelHeartBeat {
   // json format hardware system info
   string sys_info_raw = 5;
   string user_id = 6;
+  string device_ip_addr = 7;
+  string device_name = 8;
 }
 
 message SpvrSysInfo {
