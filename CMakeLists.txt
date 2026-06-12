@@ -3,7 +3,7 @@ project(tc_server_protocol)
 
 set(CMAKE_CXX_STANDARD 20)
 
-set(PROTO_LIB_NAMES protobuf::libprotoc protobuf::libprotobuf protobuf::libprotobuf-lite)
+set(PROTO_LIB_NAMES protobuf::libprotobuf protobuf::libprotobuf-lite)
 
 if(ANDROID)
     find_package(Protobuf REQUIRED)
