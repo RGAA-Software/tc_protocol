@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package spvr_service;
+
+// Between Spvr - GoDesk Windows Service (GammaRayService)
+
+enum SpvrServiceMessageType {
+  kSpvrServiceHello = 0;
+  kSpvrServiceHeartBeat = 1;
+}
+
+message SpvrServiceHello {
+  string device_id = 1;
+  string appkey = 2;
+  string version = 3;
+}
+
+message SpvrServiceHeartBeat {
+  int64 hb_index = 1;
+  string device_id = 2;
+  bool render_alive = 3;
+  // json format authorization info reported by the panel (may be empty)
+  string auth_info_json = 4;
+}
+
+message SpvrServiceMessage {
+  SpvrServiceMessageType msg_type = 1;
+  string device_id = 10;
+  SpvrServiceHello hello = 20;
+  SpvrServiceHeartBeat heartbeat = 30;
+}
